@@ -1,0 +1,57 @@
+.body {
+    background-color: #fff9f5;
+}
+
+.highcharts-container {
+    margin: 0 auto;
+}
+
+.noticia {
+    background-color: #f2dfce;
+}
+
+.noticia > img {
+    width: 100%;
+}
+
+header {
+    background-color: #fff1e0;
+}
+
+footer {
+    background-color: #fff1e0;
+    text-align: right;
+    padding-right: 20px;
+}
+
+footer>p {
+    font-weight: bold;
+}
+
+#instruc {
+    padding: 10px;
+}
+
+#alerta {
+    color: red;
+    text-align: center;
+}
+
+
+#noticies {
+    max-width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 50px;
+    
+  }
+  h4{
+    font-weight: bold;
+  }
+
+

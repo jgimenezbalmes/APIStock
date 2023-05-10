@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Carregament de scripts de highcharts i bootstrap-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script type="module" src="scripts.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <title>Comparador stocks empreses</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <h1 class="font-weight-bold">Comparador de stocks d'empreses</h1>
+        </div>
+        <!-- Introduccio de sigles d'empresa i selector d'interval de temps -->
+        <div>
+            <label for="sigles1">Sigles empresa 1:</label>
+            <input type="text" id="sigles1" name="sigles1">
+            <label for="sigles2">Sigles empresa 2:</label>
+            <input type="text" id="sigles2" name="sigles2">
+            <label for="opcio">Valors dels últims...</label>
+            <select name="opcio" id="opcio">
+                <option value="1min">30 minuts</option>
+                <option value="1h">24 h hàbils</option>
+                <option value="1day">30 dies hàbils</option>
+                <option value="1month">12 mesos</option>
+              </select>
+            <input type="submit" value="Envia" id="boto">
+        </div>
+    </header>
+    <!-- Instruccions-->
+    <div id="instruc">
+        <h3>Com funciona?</h3>
+        <p>- Introdueix dos sigles de stock (paraules de màxim 4 lletres en majúscula) i selecciona un interval de temps.</p>
+        <p>- Al fer clic a "Envia", se't generarà un gràfic explicant l'evolució dels dos stocks donats a l'interval de temps
+            proporcionat. A més, sota el gràfic se't generaran tres notícies relacionades amb els stocks donats.</p>
+        <p id="alerta"><strong>Atenció! Només funciona amb stocks americans presents al NASDAQ!</strong></p>
+    </div>
+    <!-- Div on va el grafic-->
+    <div>
+        <figure class="highcharts-figure">
+            <div id="grafic"></div>
+        </figure>
+    </div>
+    <div id="noticies"></div>
+    <footer>
+        <p>Fet per en Joan Giménez Gómez</p>
+    </footer>
+</body>
+
+</html>
